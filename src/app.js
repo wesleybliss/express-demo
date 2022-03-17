@@ -6,7 +6,7 @@ const corsOptions = {
     origin: (origin, callback) => {
         // Optionally restrict origins here
         origin && console.log('CORS', origin)
-        callback(null, true)
+        callback(null, { origin: true })
     }
 }
 
