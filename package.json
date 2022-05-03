@@ -5,7 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "npx babel-node src/index.js",
-    "dev": "npx nodemon --exec babel-node src/index.js"
+    "dev": "npx nodemon --exec babel-node src/index.js",
+    "clean": "rm -rf dist; mkdir dist",
+    "build": "yarn clean; babel -d ./dist ./src"
   },
   "dependencies": {
     "@babel/cli": "^7.17.10",
@@ -15,9 +17,12 @@
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "pino": "^7.11.0",
+    "pino-pretty": "^7.6.1"
   },
   "devDependencies": {
+    "babel-plugin-module-resolver": "^4.1.0",
     "nodemon": "^2.0.16"
   }
 }

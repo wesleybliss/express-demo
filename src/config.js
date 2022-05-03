@@ -38,7 +38,7 @@ const env = (key, type = EnvType.String, required = true) => {
         const message = `Failed to parse environment variable "${key}" as ${type}`
         
         console.error(message, e)
-        console.log('Available environment variables', JSON.stringify(process.env, null, 4))
+        console.log('Available environment variables', JSON.stringify(Object.keys(process.env).sort(), null, 4))
         throw new Error(message)
         
     }
@@ -53,6 +53,9 @@ const env = (key, type = EnvType.String, required = true) => {
 const config = {
     host: env('HOST', EnvType.String),
     port: env('PORT', EnvType.Int),
+    log: {
+        level: env('LOG_LEVEL', EnvType.String),
+    },
     cors: {
         logRequests: env('CORS_LOG_REQUESTS', EnvType.Boolean),
         allowUndefined: env('CORS_ALLOW_UNDEFINED', EnvType.Boolean),

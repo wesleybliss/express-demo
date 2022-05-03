@@ -1,7 +1,7 @@
-import * as path from 'path'
-import dotenv from 'dotenv'
+import '@/env'
+import logger from '@utils/logger'
 
-dotenv.config({ path: path.resolve(__dirname, '../.env') })
+const log = logger('index')
 
 const start = async () => {
     
@@ -12,9 +12,9 @@ const start = async () => {
     const uri = `http://${host}:${port}`
     
     app.listen(port, host, () => {
-        console.info(`Listening on ${uri}`)
-        console.info(`CORS whitelist ${config.cors.whitelist.enabled ? 'is' : 'is not'} enabled`)
-        // console.info(JSON.stringify(config, null, 4))
+        log.info(`Listening on ${uri}`)
+        log.info(`CORS whitelist ${config.cors.whitelist.enabled ? 'is' : 'is not'} enabled`)
+        // log.info(JSON.stringify(config, null, 4))
     })
     
 }

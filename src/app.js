@@ -1,9 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
-import * as middleware from './middleware'
-import * as routes from './routes'
-
-const randomNumber = (from, to) => Math.floor(Math.random() * (to - from + 1) + from)
+import * as middleware from '@middleware'
+import * as routes from '@routes'
 
 const app = express()
 

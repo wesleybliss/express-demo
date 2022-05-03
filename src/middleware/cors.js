@@ -1,5 +1,8 @@
 import cors from 'cors'
-import config from '../config'
+import config from '@/config'
+import logger from '@utils/logger'
+
+const log = logger('middleware/cors')
 
 const readWhitelist = () => {
     
@@ -26,6 +29,9 @@ const corsOptions = {
     
     origin: (origin, callback) => {
         
+        if (origin && config.cors.logRequests)
+            log.debug('CORS', origin)
+        
         if (!origin || typeof origin === 'undefined') {
             if (config.cors.allowUndefined) {
                 // Some GET requests (from cURL, etc.) have undefined origins
@@ -35,10 +41,6 @@ const corsOptions = {
                 return callback(new Error('Unauthorized'), false)
             }
         }
-        
-        // Optionally restrict origins here
-        if (origin && config.cors.logRequests)
-            console.log('CORS', origin)
         
         if (config.cors.whitelist.enabled) {
             
