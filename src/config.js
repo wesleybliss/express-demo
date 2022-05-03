@@ -38,6 +38,7 @@ const env = (key, type = EnvType.String, required = true) => {
         const message = `Failed to parse environment variable "${key}" as ${type}`
         
         console.error(message, e)
+        console.log('Available environment variables', JSON.stringify(process.env, null, 4))
         throw new Error(message)
         
     }

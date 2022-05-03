@@ -14,7 +14,7 @@ const start = async () => {
     app.listen(port, host, () => {
         console.info(`Listening on ${uri}`)
         console.info(`CORS whitelist ${config.cors.whitelist.enabled ? 'is' : 'is not'} enabled`)
-        console.info(JSON.stringify(config, null, 4))
+        // console.info(JSON.stringify(config, null, 4))
     })
     
 }
