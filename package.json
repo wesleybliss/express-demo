@@ -10,19 +10,19 @@
     "build": "yarn clean; babel -d ./dist ./src"
   },
   "dependencies": {
-    "@babel/cli": "^7.17.10",
-    "@babel/core": "^7.17.10",
-    "@babel/node": "^7.17.10",
-    "@babel/preset-env": "^7.17.10",
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/node": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
     "body-parser": "^1.20.0",
     "cors": "^2.8.5",
-    "dotenv": "^16.0.0",
+    "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "pino": "^7.11.0",
-    "pino-pretty": "^7.6.1"
+    "pino": "^8.4.1",
+    "pino-pretty": "^9.0.0"
   },
   "devDependencies": {
     "babel-plugin-module-resolver": "^4.1.0",
-    "nodemon": "^2.0.16"
+    "nodemon": "^2.0.19"
   }
 }
